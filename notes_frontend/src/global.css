@@ -1,15 +1,25 @@
 /**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles for the ultralight Qwik template.
- * Uses a minimalistic light theme with specified color scheme.
+ * Global styles: Minimalistic light theme for Simple Notes App.
+ * Color palette from requirements:
+ * - primary: #007bff
+ * - secondary: #6c757d
+ * - accent: #17a2b8
  */
-
 :root {
-  --primary-color: #000000;
-  --secondary-color: #333333;
-  --accent-color: #0078d4;
-  --background-color: #ffffff;
+  --color-primary: #007bff;
+  --color-secondary: #6c757d;
+  --color-accent: #17a2b8;
+
+  --text-strong: #1f2937; /* slate-800 */
+  --text-muted: #6b7280;  /* slate-500 */
+  --bg: #ffffff;
+  --bg-soft: #f8fafc;     /* slate-50 */
+  --border: #e5e7eb;      /* slate-200 */
+  --focus: rgba(0, 123, 255, 0.35);
+
+  --radius: 10px;
+  --shadow-1: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-2: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 html {
@@ -31,11 +41,31 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: var(--primary-color);
+  background-color: var(--bg-soft);
+  color: var(--text-strong);
   line-height: inherit;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+button {
+  font: inherit;
+}
+
+input, textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
 }
